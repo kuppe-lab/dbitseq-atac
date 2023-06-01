@@ -1,0 +1,11 @@
+prefix=/rwthfs/rz/cluster/work/rwth1209/software/DbiT-seq-pipeline/Data_preprocessing/.snakemake/conda/a8d2669a8b6cc9a87bb71095900a3408_
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+toolexeclibdir=${libdir}
+includedir=/rwthfs/rz/cluster/work/rwth1209/software/DbiT-seq-pipeline/Data_preprocessing/.snakemake/conda/a8d2669a8b6cc9a87bb71095900a3408_/include
+
+Name: libffi
+Description: Library supporting Foreign Function Interfaces
+Version: 3.4.2
+Libs: -L${toolexeclibdir} -lffi
+Cflags: -I${includedir}

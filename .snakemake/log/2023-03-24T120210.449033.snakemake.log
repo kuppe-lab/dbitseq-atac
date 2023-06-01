@@ -1,0 +1,44 @@
+Building DAG of jobs...
+Your conda installation is not configured to use strict channel priorities. This is however crucial for having robust and correct environments (for details, see https://conda-forge.org/docs/user/tipsandtricks.html). Please consider to configure strict priorities by executing 'conda config --set channel_priority strict'.
+Creating conda environment dbitseq.yaml...
+Downloading and installing remote packages.
+Environment for /rwthfs/rz/cluster/work/rwth1209/software/DbiT-seq-pipeline/Data_preprocessing/dbitseq.yaml created (location: .snakemake/conda/a8d2669a8b6cc9a87bb71095900a3408_)
+Using shell: /usr/local_rwth/bin/bash
+Provided cluster nodes: 20
+Job stats:
+job            count    min threads    max threads
+-----------  -------  -------------  -------------
+all                1              1              1
+bc_process         1              1              1
+cell_ranger        1              1              1
+total              3              1              1
+
+Select jobs to execute...
+
+[Fri Mar 24 12:12:33 2023]
+rule bc_process:
+    input: /rwthfs/rz/cluster/hpcwork/rwth1209/data/dbitseq_test/processed/kidney/CellRanger/tmp_data/qc_raw_data/kidney_raw_qc_R1.fastq.gz
+    output: /rwthfs/rz/cluster/hpcwork/rwth1209/data/dbitseq_test/processed/kidney/CellRanger/tmp_data/kidney_S1_L001_R1_001.fastq, /rwthfs/rz/cluster/hpcwork/rwth1209/data/dbitseq_test/processed/kidney/CellRanger/tmp_data/kidney_S1_L001_R2_001.fastq
+    jobid: 2
+    reason: Missing output files: /rwthfs/rz/cluster/hpcwork/rwth1209/data/dbitseq_test/processed/kidney/CellRanger/tmp_data/kidney_S1_L001_R2_001.fastq, /rwthfs/rz/cluster/hpcwork/rwth1209/data/dbitseq_test/processed/kidney/CellRanger/tmp_data/kidney_S1_L001_R1_001.fastq
+    wildcards: sample=kidney
+    resources: mem_mb=37286, mem_mib=35559, disk_mb=37286, disk_mib=35559, tmpdir=<TBD>
+
+Submitted job 2 with external jobid 'Submitted batch job 34181850'.
+[Fri Mar 24 12:14:13 2023]
+Error in rule bc_process:
+    jobid: 2
+    input: /rwthfs/rz/cluster/hpcwork/rwth1209/data/dbitseq_test/processed/kidney/CellRanger/tmp_data/qc_raw_data/kidney_raw_qc_R1.fastq.gz
+    output: /rwthfs/rz/cluster/hpcwork/rwth1209/data/dbitseq_test/processed/kidney/CellRanger/tmp_data/kidney_S1_L001_R1_001.fastq, /rwthfs/rz/cluster/hpcwork/rwth1209/data/dbitseq_test/processed/kidney/CellRanger/tmp_data/kidney_S1_L001_R2_001.fastq
+    conda-env: /rwthfs/rz/cluster/work/rwth1209/software/DbiT-seq-pipeline/Data_preprocessing/.snakemake/conda/a8d2669a8b6cc9a87bb71095900a3408_
+    shell:
+        
+    python BC_process.py --input /rwthfs/rz/cluster/hpcwork/rwth1209/data/dbitseq_test/processed/kidney/CellRanger/tmp_data/qc_raw_data/kidney_raw_qc_R1.fastq.gz --output_R1 /rwthfs/rz/cluster/hpcwork/rwth1209/data/dbitseq_test/processed/kidney/CellRanger/tmp_data/kidney_S1_L001_R1_001.fastq --output_R2 /rwthfs/rz/cluster/hpcwork/rwth1209/data/dbitseq_test/processed/kidney/CellRanger/tmp_data/kidney_S1_L001_R2_001.fastq
+    
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 34181850
+
+Error executing rule bc_process on cluster (jobid: 2, external: Submitted batch job 34181850, jobscript: /rwthfs/rz/cluster/work/rwth1209/software/DbiT-seq-pipeline/Data_preprocessing/.snakemake/tmp.4504qsvf/snakejob.bc_process.2.sh). For error details see the cluster log and the log files of the involved rule(s).
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2023-03-24T120210.449033.snakemake.log

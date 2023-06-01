@@ -1,0 +1,117 @@
+Building DAG of jobs...
+Using shell: /usr/local_rwth/bin/bash
+Provided cluster nodes: 20
+Job stats:
+job              count    min threads    max threads
+-------------  -------  -------------  -------------
+R1_rename            1              1              1
+all                  1              1              1
+bc_process           1              1              1
+cell_ranger          1              1              1
+filter_L1            1              1              1
+filter_L2            1              1              1
+filter_primer        1              1              1
+total                7              1              1
+
+Select jobs to execute...
+
+[Wed Mar 29 10:28:52 2023]
+rule filter_primer:
+    input: /rwthfs/rz/cluster/hpcwork/rwth1209/data/dbitseq_test/raw/mouse_brain/MouseBrain_S1_R1_001.fastq.gz, /rwthfs/rz/cluster/hpcwork/rwth1209/data/dbitseq_test/raw/mouse_brain/MouseBrain_S1_R2_001.fastq.gz
+    output: /rwthfs/rz/cluster/hpcwork/rwth1209/data/dbitseq_test/processed/mouse_brain/CellRanger/tmp_data/qc_raw_data/mouse_brain_raw_qc_primer_R1.fastq.gz, /rwthfs/rz/cluster/hpcwork/rwth1209/data/dbitseq_test/processed/mouse_brain/CellRanger/tmp_data/qc_raw_data/mouse_brain_raw_qc_primer_R2.fastq.gz
+    jobid: 5
+    reason: Missing output files: /rwthfs/rz/cluster/hpcwork/rwth1209/data/dbitseq_test/processed/mouse_brain/CellRanger/tmp_data/qc_raw_data/mouse_brain_raw_qc_primer_R1.fastq.gz, /rwthfs/rz/cluster/hpcwork/rwth1209/data/dbitseq_test/processed/mouse_brain/CellRanger/tmp_data/qc_raw_data/mouse_brain_raw_qc_primer_R2.fastq.gz
+    wildcards: sample=mouse_brain
+    resources: mem_mb=82211, mem_mib=78403, disk_mb=82211, disk_mib=78403, tmpdir=<TBD>
+
+Submitted job 5 with external jobid 'Submitted batch job 34211926'.
+[Wed Mar 29 10:48:33 2023]
+Finished job 5.
+1 of 7 steps (14%) done
+Select jobs to execute...
+
+[Wed Mar 29 10:48:33 2023]
+rule filter_L1:
+    input: /rwthfs/rz/cluster/hpcwork/rwth1209/data/dbitseq_test/processed/mouse_brain/CellRanger/tmp_data/qc_raw_data/mouse_brain_raw_qc_primer_R1.fastq.gz, /rwthfs/rz/cluster/hpcwork/rwth1209/data/dbitseq_test/processed/mouse_brain/CellRanger/tmp_data/qc_raw_data/mouse_brain_raw_qc_primer_R2.fastq.gz
+    output: /rwthfs/rz/cluster/hpcwork/rwth1209/data/dbitseq_test/processed/mouse_brain/CellRanger/tmp_data/qc_raw_data/mouse_brain_raw_qc_linker1_R1.fastq.gz, /rwthfs/rz/cluster/hpcwork/rwth1209/data/dbitseq_test/processed/mouse_brain/CellRanger/tmp_data/qc_raw_data/mouse_brain_raw_qc_linker1_R2.fastq.gz
+    jobid: 4
+    reason: Missing output files: /rwthfs/rz/cluster/hpcwork/rwth1209/data/dbitseq_test/processed/mouse_brain/CellRanger/tmp_data/qc_raw_data/mouse_brain_raw_qc_linker1_R1.fastq.gz, /rwthfs/rz/cluster/hpcwork/rwth1209/data/dbitseq_test/processed/mouse_brain/CellRanger/tmp_data/qc_raw_data/mouse_brain_raw_qc_linker1_R2.fastq.gz; Input files updated by another job: /rwthfs/rz/cluster/hpcwork/rwth1209/data/dbitseq_test/processed/mouse_brain/CellRanger/tmp_data/qc_raw_data/mouse_brain_raw_qc_primer_R1.fastq.gz, /rwthfs/rz/cluster/hpcwork/rwth1209/data/dbitseq_test/processed/mouse_brain/CellRanger/tmp_data/qc_raw_data/mouse_brain_raw_qc_primer_R2.fastq.gz
+    wildcards: sample=mouse_brain
+    resources: mem_mb=62634, mem_mib=59733, disk_mb=62634, disk_mib=59733, tmpdir=<TBD>
+
+Submitted job 4 with external jobid 'Submitted batch job 34211964'.
+[Wed Mar 29 10:57:34 2023]
+Finished job 4.
+2 of 7 steps (29%) done
+Select jobs to execute...
+
+[Wed Mar 29 10:57:34 2023]
+rule filter_L2:
+    input: /rwthfs/rz/cluster/hpcwork/rwth1209/data/dbitseq_test/processed/mouse_brain/CellRanger/tmp_data/qc_raw_data/mouse_brain_raw_qc_linker1_R1.fastq.gz, /rwthfs/rz/cluster/hpcwork/rwth1209/data/dbitseq_test/processed/mouse_brain/CellRanger/tmp_data/qc_raw_data/mouse_brain_raw_qc_linker1_R2.fastq.gz
+    output: /rwthfs/rz/cluster/hpcwork/rwth1209/data/dbitseq_test/processed/mouse_brain/CellRanger/tmp_data/qc_raw_data/mouse_brain_raw_qc_R1.fastq.gz, /rwthfs/rz/cluster/hpcwork/rwth1209/data/dbitseq_test/processed/mouse_brain/CellRanger/tmp_data/qc_raw_data/mouse_brain_raw_qc_R2.fastq.gz
+    jobid: 3
+    reason: Missing output files: /rwthfs/rz/cluster/hpcwork/rwth1209/data/dbitseq_test/processed/mouse_brain/CellRanger/tmp_data/qc_raw_data/mouse_brain_raw_qc_R1.fastq.gz, /rwthfs/rz/cluster/hpcwork/rwth1209/data/dbitseq_test/processed/mouse_brain/CellRanger/tmp_data/qc_raw_data/mouse_brain_raw_qc_R2.fastq.gz; Input files updated by another job: /rwthfs/rz/cluster/hpcwork/rwth1209/data/dbitseq_test/processed/mouse_brain/CellRanger/tmp_data/qc_raw_data/mouse_brain_raw_qc_linker1_R1.fastq.gz, /rwthfs/rz/cluster/hpcwork/rwth1209/data/dbitseq_test/processed/mouse_brain/CellRanger/tmp_data/qc_raw_data/mouse_brain_raw_qc_linker1_R2.fastq.gz
+    wildcards: sample=mouse_brain
+    resources: mem_mb=26956, mem_mib=25708, disk_mb=26956, disk_mib=25708, tmpdir=<TBD>
+
+Submitted job 3 with external jobid 'Submitted batch job 34212029'.
+[Wed Mar 29 11:06:35 2023]
+Finished job 3.
+3 of 7 steps (43%) done
+Select jobs to execute...
+
+[Wed Mar 29 11:06:35 2023]
+rule bc_process:
+    input: /rwthfs/rz/cluster/hpcwork/rwth1209/data/dbitseq_test/processed/mouse_brain/CellRanger/tmp_data/qc_raw_data/mouse_brain_raw_qc_R2.fastq.gz
+    output: /rwthfs/rz/cluster/hpcwork/rwth1209/data/dbitseq_test/processed/mouse_brain/CellRanger/tmp_data/mouse_brain_S1_L001_R1_001.fastq, /rwthfs/rz/cluster/hpcwork/rwth1209/data/dbitseq_test/processed/mouse_brain/CellRanger/tmp_data/mouse_brain_S1_L001_R2_001.fastq
+    jobid: 2
+    reason: Missing output files: /rwthfs/rz/cluster/hpcwork/rwth1209/data/dbitseq_test/processed/mouse_brain/CellRanger/tmp_data/mouse_brain_S1_L001_R2_001.fastq, /rwthfs/rz/cluster/hpcwork/rwth1209/data/dbitseq_test/processed/mouse_brain/CellRanger/tmp_data/mouse_brain_S1_L001_R1_001.fastq; Input files updated by another job: /rwthfs/rz/cluster/hpcwork/rwth1209/data/dbitseq_test/processed/mouse_brain/CellRanger/tmp_data/qc_raw_data/mouse_brain_raw_qc_R2.fastq.gz
+    wildcards: sample=mouse_brain
+    resources: mem_mb=12669, mem_mib=12083, disk_mb=12669, disk_mib=12083, tmpdir=<TBD>
+
+Submitted job 2 with external jobid 'Submitted batch job 34212140'.
+
+[Wed Mar 29 11:06:35 2023]
+rule R1_rename:
+    input: /rwthfs/rz/cluster/hpcwork/rwth1209/data/dbitseq_test/processed/mouse_brain/CellRanger/tmp_data/qc_raw_data/mouse_brain_raw_qc_R1.fastq.gz
+    output: /rwthfs/rz/cluster/hpcwork/rwth1209/data/dbitseq_test/processed/mouse_brain/CellRanger/tmp_data/mouse_brain_S1_L001_R3_001.fastq.gz
+    jobid: 6
+    reason: Missing output files: /rwthfs/rz/cluster/hpcwork/rwth1209/data/dbitseq_test/processed/mouse_brain/CellRanger/tmp_data/mouse_brain_S1_L001_R3_001.fastq.gz; Input files updated by another job: /rwthfs/rz/cluster/hpcwork/rwth1209/data/dbitseq_test/processed/mouse_brain/CellRanger/tmp_data/qc_raw_data/mouse_brain_raw_qc_R1.fastq.gz
+    wildcards: sample=mouse_brain
+    resources: mem_mb=13339, mem_mib=12722, disk_mb=13339, disk_mib=12722, tmpdir=<TBD>
+
+Submitted job 6 with external jobid 'Submitted batch job 34212141'.
+[Wed Mar 29 11:07:35 2023]
+Finished job 6.
+4 of 7 steps (57%) done
+[Wed Mar 29 11:16:05 2023]
+Finished job 2.
+5 of 7 steps (71%) done
+Select jobs to execute...
+
+[Wed Mar 29 11:16:05 2023]
+rule cell_ranger:
+    input: /rwthfs/rz/cluster/hpcwork/rwth1209/data/dbitseq_test/processed/mouse_brain/CellRanger/tmp_data/mouse_brain_S1_L001_R1_001.fastq, /rwthfs/rz/cluster/hpcwork/rwth1209/data/dbitseq_test/processed/mouse_brain/CellRanger/tmp_data/mouse_brain_S1_L001_R2_001.fastq, /rwthfs/rz/cluster/hpcwork/rwth1209/data/dbitseq_test/processed/mouse_brain/CellRanger/tmp_data/mouse_brain_S1_L001_R3_001.fastq.gz, /rwthfs/rz/cluster/hpcwork/rwth1209/reference_genome/mouse_mm10_atac_10x
+    output: /rwthfs/rz/cluster/hpcwork/rwth1209/data/dbitseq_test/processed/mouse_brain/CellRanger/mouse_brain/outs/fragments.tsv.gz
+    jobid: 1
+    reason: Missing output files: /rwthfs/rz/cluster/hpcwork/rwth1209/data/dbitseq_test/processed/mouse_brain/CellRanger/mouse_brain/outs/fragments.tsv.gz; Input files updated by another job: /rwthfs/rz/cluster/hpcwork/rwth1209/data/dbitseq_test/processed/mouse_brain/CellRanger/tmp_data/mouse_brain_S1_L001_R3_001.fastq.gz, /rwthfs/rz/cluster/hpcwork/rwth1209/data/dbitseq_test/processed/mouse_brain/CellRanger/tmp_data/mouse_brain_S1_L001_R2_001.fastq, /rwthfs/rz/cluster/hpcwork/rwth1209/data/dbitseq_test/processed/mouse_brain/CellRanger/tmp_data/mouse_brain_S1_L001_R1_001.fastq
+    wildcards: sample=mouse_brain
+    resources: mem_mb=52986, mem_mib=50532, disk_mb=52986, disk_mib=50532, tmpdir=<TBD>
+
+Submitted job 1 with external jobid 'Submitted batch job 34212217'.
+[Wed Mar 29 18:47:40 2023]
+Finished job 1.
+6 of 7 steps (86%) done
+Select jobs to execute...
+
+[Wed Mar 29 18:47:40 2023]
+localrule all:
+    input: /rwthfs/rz/cluster/hpcwork/rwth1209/data/dbitseq_test/processed/mouse_brain/CellRanger/mouse_brain/outs/fragments.tsv.gz
+    jobid: 0
+    reason: Input files updated by another job: /rwthfs/rz/cluster/hpcwork/rwth1209/data/dbitseq_test/processed/mouse_brain/CellRanger/mouse_brain/outs/fragments.tsv.gz
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=/w0/tmp/slurm_mz637064.34211925
+
+[Wed Mar 29 18:47:40 2023]
+Finished job 0.
+7 of 7 steps (100%) done
+Complete log: .snakemake/log/2023-03-29T102850.704478.snakemake.log

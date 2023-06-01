@@ -1,0 +1,41 @@
+Building DAG of jobs...
+Using shell: /usr/local_rwth/bin/bash
+Provided cluster nodes: 20
+Job stats:
+job            count    min threads    max threads
+-----------  -------  -------------  -------------
+all                1              1              1
+cell_ranger        1              1              1
+total              2              1              1
+
+Select jobs to execute...
+
+[Fri Mar 24 21:04:32 2023]
+rule cell_ranger:
+    input: /rwthfs/rz/cluster/hpcwork/rwth1209/data/dbitseq_test/processed/kidney/CellRanger/tmp_data/kidney_S1_L001_R1_001.fastq, /rwthfs/rz/cluster/hpcwork/rwth1209/data/dbitseq_test/processed/kidney/CellRanger/tmp_data/kidney_S1_L001_R2_001.fastq, /rwthfs/rz/cluster/hpcwork/rwth1209/data/dbitseq_test/processed/kidney/CellRanger/tmp_data/kidney_S1_L001_R3_001.fastq.gz
+    output: /rwthfs/rz/cluster/hpcwork/rwth1209/data/dbitseq_test/processed/kidney/CellRanger/kidney/outs/fragments.tsv.gz
+    jobid: 1
+    reason: Missing output files: /rwthfs/rz/cluster/hpcwork/rwth1209/data/dbitseq_test/processed/kidney/CellRanger/kidney/outs/fragments.tsv.gz
+    wildcards: sample=kidney
+    resources: mem_mb=160593, mem_mib=153154, disk_mb=160593, disk_mib=153154, tmpdir=<TBD>
+
+Submitted job 1 with external jobid 'Submitted batch job 34187715'.
+[Fri Mar 24 21:05:12 2023]
+Error in rule cell_ranger:
+    jobid: 1
+    input: /rwthfs/rz/cluster/hpcwork/rwth1209/data/dbitseq_test/processed/kidney/CellRanger/tmp_data/kidney_S1_L001_R1_001.fastq, /rwthfs/rz/cluster/hpcwork/rwth1209/data/dbitseq_test/processed/kidney/CellRanger/tmp_data/kidney_S1_L001_R2_001.fastq, /rwthfs/rz/cluster/hpcwork/rwth1209/data/dbitseq_test/processed/kidney/CellRanger/tmp_data/kidney_S1_L001_R3_001.fastq.gz
+    output: /rwthfs/rz/cluster/hpcwork/rwth1209/data/dbitseq_test/processed/kidney/CellRanger/kidney/outs/fragments.tsv.gz
+    shell:
+        
+    cd /rwthfs/rz/cluster/hpcwork/rwth1209/data/dbitseq_test/processed/kidney/CellRanger/
+    rm -r kidney
+    
+    /rwthfs/rz/cluster/work/rwth1209/software//cellranger-atac-2.1.0-dbitseq/ count     --id=kidney     --reference=/rwthfs/rz/cluster/hpcwork/rwth1209/reference_genome/human_GRCh38_10x/     --fastqs=/rwthfs/rz/cluster/hpcwork/rwth1209/data/dbitseq_test/processed/kidney/CellRanger/tmp_data     --sample=kidney     --localcores=16     --localmem=64
+    
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 34187715
+
+Error executing rule cell_ranger on cluster (jobid: 1, external: Submitted batch job 34187715, jobscript: /rwthfs/rz/cluster/work/rwth1209/software/DbiT-seq-pipeline/Data_preprocessing/.snakemake/tmp.c_oh2ct_/snakejob.cell_ranger.1.sh). For error details see the cluster log and the log files of the involved rule(s).
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2023-03-24T210427.479512.snakemake.log

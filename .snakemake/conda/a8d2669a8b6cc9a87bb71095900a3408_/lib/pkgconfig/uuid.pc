@@ -1,0 +1,11 @@
+prefix=/rwthfs/rz/cluster/work/rwth1209/software/DbiT-seq-pipeline/Data_preprocessing/.snakemake/conda/a8d2669a8b6cc9a87bb71095900a3408_
+exec_prefix=/rwthfs/rz/cluster/work/rwth1209/software/DbiT-seq-pipeline/Data_preprocessing/.snakemake/conda/a8d2669a8b6cc9a87bb71095900a3408_
+libdir=/rwthfs/rz/cluster/work/rwth1209/software/DbiT-seq-pipeline/Data_preprocessing/.snakemake/conda/a8d2669a8b6cc9a87bb71095900a3408_/lib
+includedir=/rwthfs/rz/cluster/work/rwth1209/software/DbiT-seq-pipeline/Data_preprocessing/.snakemake/conda/a8d2669a8b6cc9a87bb71095900a3408_/include
+
+Name: uuid
+Description: Universally unique id library
+Version: 2.32.1
+Requires:
+Cflags: -I${includedir}/uuid
+Libs: -L${libdir} -luuid

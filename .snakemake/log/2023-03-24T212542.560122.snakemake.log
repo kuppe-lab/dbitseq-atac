@@ -1,0 +1,26 @@
+Building DAG of jobs...
+Using shell: /usr/local_rwth/bin/bash
+Provided cluster nodes: 20
+Job stats:
+job            count    min threads    max threads
+-----------  -------  -------------  -------------
+R2_rename          1              1              1
+all                1              1              1
+bc_process         1              1              1
+cell_ranger        1              1              1
+filter_L1          1              1              1
+filter_L2          1              1              1
+total              6              1              1
+
+Select jobs to execute...
+
+[Fri Mar 24 21:25:44 2023]
+rule filter_L1:
+    input: /rwthfs/rz/cluster/hpcwork/rwth1209/data/dbitseq_test/raw/kidney/HumanKidney_S2_R1_001.fastq.gz, /rwthfs/rz/cluster/hpcwork/rwth1209/data/dbitseq_test/raw/kidney/HumanKidney_S2_R2_001.fastq.gz
+    output: /rwthfs/rz/cluster/hpcwork/rwth1209/data/dbitseq_test/processed/kidney/CellRanger/tmp_data/qc_raw_data/kidney_raw_qc_linker1_R1.fastq.gz, /rwthfs/rz/cluster/hpcwork/rwth1209/data/dbitseq_test/processed/kidney/CellRanger/tmp_data/qc_raw_data/kidney_raw_qc_linker1_R2.fastq.gz
+    jobid: 4
+    reason: Missing output files: /rwthfs/rz/cluster/hpcwork/rwth1209/data/dbitseq_test/processed/kidney/CellRanger/tmp_data/qc_raw_data/kidney_raw_qc_linker1_R1.fastq.gz, /rwthfs/rz/cluster/hpcwork/rwth1209/data/dbitseq_test/processed/kidney/CellRanger/tmp_data/qc_raw_data/kidney_raw_qc_linker1_R2.fastq.gz
+    wildcards: sample=kidney
+    resources: mem_mb=134959, mem_mib=128707, disk_mb=134959, disk_mib=128707, tmpdir=<TBD>
+
+Submitted job 4 with external jobid 'Submitted batch job 34187757'.

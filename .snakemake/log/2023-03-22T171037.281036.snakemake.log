@@ -1,0 +1,100 @@
+Building DAG of jobs...
+Using shell: /usr/local_rwth/bin/bash
+Provided cluster nodes: 20
+Job stats:
+job            count    min threads    max threads
+-----------  -------  -------------  -------------
+R2_rename          2              1              1
+all                1              1              1
+bc_process         2              1              1
+cell_ranger        2              1              1
+filter_L1          2              1              1
+filter_L2          2              1              1
+total             11              1              1
+
+Select jobs to execute...
+
+[Wed Mar 22 17:10:39 2023]
+rule filter_L1:
+    input: /hpcwork/rwth1209/data/dbitseq_test/raw/kidney/HumanKidney_S2_R1_001.fastq.gz, /hpcwork/rwth1209/data/dbitseq_test/raw/kidney/HumanKidney_S2_R2_001.fastq.gz
+    output: /hpcwork/rwth1209/data/dbitseq_test/processed/kidney/CellRanger/tmp_data/qc_raw_data/kidney_raw_qc_linker1_R1.fastq.gz, /hpcwork/rwth1209/data/dbitseq_test/processed/kidney/CellRanger/tmp_data/qc_raw_data/kidney_raw_qc_linker1_R2.fastq.gz
+    jobid: 9
+    reason: Missing output files: /hpcwork/rwth1209/data/dbitseq_test/processed/kidney/CellRanger/tmp_data/qc_raw_data/kidney_raw_qc_linker1_R1.fastq.gz, /hpcwork/rwth1209/data/dbitseq_test/processed/kidney/CellRanger/tmp_data/qc_raw_data/kidney_raw_qc_linker1_R2.fastq.gz
+    wildcards: sample=kidney
+    resources: mem_mb=134959, mem_mib=128707, disk_mb=134959, disk_mib=128707, tmpdir=<TBD>
+
+Submitted job 9 with external jobid 'Submitted batch job 34163049'.
+
+[Wed Mar 22 17:10:39 2023]
+rule filter_L1:
+    input: /hpcwork/rwth1209/data/dbitseq_test/raw/brain/MouseBrain_S1_R1_001.fastq.gz, /hpcwork/rwth1209/data/dbitseq_test/raw/brain/MouseBrain_S1_R2_001.fastq.gz
+    output: /hpcwork/rwth1209/data/dbitseq_test/processed/brain/CellRanger/tmp_data/qc_raw_data/brain_raw_qc_linker1_R1.fastq.gz, /hpcwork/rwth1209/data/dbitseq_test/processed/brain/CellRanger/tmp_data/qc_raw_data/brain_raw_qc_linker1_R2.fastq.gz
+    jobid: 4
+    reason: Missing output files: /hpcwork/rwth1209/data/dbitseq_test/processed/brain/CellRanger/tmp_data/qc_raw_data/brain_raw_qc_linker1_R2.fastq.gz, /hpcwork/rwth1209/data/dbitseq_test/processed/brain/CellRanger/tmp_data/qc_raw_data/brain_raw_qc_linker1_R1.fastq.gz
+    wildcards: sample=brain
+    resources: mem_mb=82211, mem_mib=78403, disk_mb=82211, disk_mib=78403, tmpdir=<TBD>
+
+Submitted job 4 with external jobid 'Submitted batch job 34163050'.
+[Wed Mar 22 17:20:19 2023]
+Finished job 4.
+1 of 11 steps (9%) done
+Select jobs to execute...
+
+[Wed Mar 22 17:20:19 2023]
+rule filter_L2:
+    input: /hpcwork/rwth1209/data/dbitseq_test/processed/brain/CellRanger/tmp_data/qc_raw_data/brain_raw_qc_linker1_R1.fastq.gz, /hpcwork/rwth1209/data/dbitseq_test/processed/brain/CellRanger/tmp_data/qc_raw_data/brain_raw_qc_linker1_R2.fastq.gz
+    output: /hpcwork/rwth1209/data/dbitseq_test/processed/brain/CellRanger/tmp_data/qc_raw_data/brain_raw_qc_R1.fastq.gz, /hpcwork/rwth1209/data/dbitseq_test/processed/brain/CellRanger/tmp_data/qc_raw_data/brain_raw_qc_R2.fastq.gz
+    jobid: 3
+    reason: Missing output files: /hpcwork/rwth1209/data/dbitseq_test/processed/brain/CellRanger/tmp_data/qc_raw_data/brain_raw_qc_R1.fastq.gz, /hpcwork/rwth1209/data/dbitseq_test/processed/brain/CellRanger/tmp_data/qc_raw_data/brain_raw_qc_R2.fastq.gz; Input files updated by another job: /hpcwork/rwth1209/data/dbitseq_test/processed/brain/CellRanger/tmp_data/qc_raw_data/brain_raw_qc_linker1_R2.fastq.gz, /hpcwork/rwth1209/data/dbitseq_test/processed/brain/CellRanger/tmp_data/qc_raw_data/brain_raw_qc_linker1_R1.fastq.gz
+    wildcards: sample=brain
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>
+
+Submitted job 3 with external jobid 'Submitted batch job 34163838'.
+[Wed Mar 22 17:20:29 2023]
+Finished job 3.
+2 of 11 steps (18%) done
+Select jobs to execute...
+
+[Wed Mar 22 17:20:29 2023]
+rule bc_process:
+    input: /hpcwork/rwth1209/data/dbitseq_test/processed/brain/CellRanger/tmp_data/qc_raw_data/brain_raw_qc_R1.fastq.gz
+    output: /hpcwork/rwth1209/data/dbitseq_test/processed/brain/CellRanger/tmp_data/brain_S1_L001_R1_001.fastq, /hpcwork/rwth1209/data/dbitseq_test/processed/brain/CellRanger/tmp_data/brain_S1_L001_R2_001.fastq
+    jobid: 2
+    reason: Missing output files: /hpcwork/rwth1209/data/dbitseq_test/processed/brain/CellRanger/tmp_data/brain_S1_L001_R1_001.fastq, /hpcwork/rwth1209/data/dbitseq_test/processed/brain/CellRanger/tmp_data/brain_S1_L001_R2_001.fastq; Input files updated by another job: /hpcwork/rwth1209/data/dbitseq_test/processed/brain/CellRanger/tmp_data/qc_raw_data/brain_raw_qc_R1.fastq.gz
+    wildcards: sample=brain
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>
+
+Submitted job 2 with external jobid 'Submitted batch job 34163847'.
+
+[Wed Mar 22 17:20:29 2023]
+rule R2_rename:
+    input: /hpcwork/rwth1209/data/dbitseq_test/processed/brain/CellRanger/tmp_data/qc_raw_data/brain_raw_qc_R2.fastq.gz
+    output: /hpcwork/rwth1209/data/dbitseq_test/processed/brain/CellRanger/tmp_data/brain_S1_L001_R3_001.fastq.gz
+    jobid: 5
+    reason: Missing output files: /hpcwork/rwth1209/data/dbitseq_test/processed/brain/CellRanger/tmp_data/brain_S1_L001_R3_001.fastq.gz; Input files updated by another job: /hpcwork/rwth1209/data/dbitseq_test/processed/brain/CellRanger/tmp_data/qc_raw_data/brain_raw_qc_R2.fastq.gz
+    wildcards: sample=brain
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>
+
+Submitted job 5 with external jobid 'Submitted batch job 34163848'.
+[Wed Mar 22 17:21:09 2023]
+Error in rule bc_process:
+    jobid: 2
+    input: /hpcwork/rwth1209/data/dbitseq_test/processed/brain/CellRanger/tmp_data/qc_raw_data/brain_raw_qc_R1.fastq.gz
+    output: /hpcwork/rwth1209/data/dbitseq_test/processed/brain/CellRanger/tmp_data/brain_S1_L001_R1_001.fastq, /hpcwork/rwth1209/data/dbitseq_test/processed/brain/CellRanger/tmp_data/brain_S1_L001_R2_001.fastq
+    shell:
+        
+    python BC_process.py --input /hpcwork/rwth1209/data/dbitseq_test/processed/brain/CellRanger/tmp_data/qc_raw_data/brain_raw_qc_R1.fastq.gz --output_R1 /hpcwork/rwth1209/data/dbitseq_test/processed/brain/CellRanger/tmp_data/brain_S1_L001_R1_001.fastq --output_R2 /hpcwork/rwth1209/data/dbitseq_test/processed/brain/CellRanger/tmp_data/brain_S1_L001_R2_001.fastq
+    
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 34163847
+
+Error executing rule bc_process on cluster (jobid: 2, external: Submitted batch job 34163847, jobscript: /rwthfs/rz/cluster/work/rwth1209/software/DbiT-seq-pipeline/Data_preprocessing/.snakemake/tmp.8cjo0sb7/snakejob.bc_process.2.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Wed Mar 22 17:21:09 2023]
+Finished job 5.
+3 of 11 steps (27%) done
+[Wed Mar 22 17:24:39 2023]
+Finished job 9.
+4 of 11 steps (36%) done
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2023-03-22T171037.281036.snakemake.log

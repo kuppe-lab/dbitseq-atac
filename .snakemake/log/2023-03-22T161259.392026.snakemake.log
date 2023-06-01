@@ -1,0 +1,6 @@
+Building DAG of jobs...
+MissingInputException in rule all in file /rwthfs/rz/cluster/work/rwth1209/software/DbiT-seq-pipeline/Data_preprocessing/Snakefile, line 55:
+Missing input files for rule all:
+    affected files:
+        /hpcwork/rwth1209/data/dbitseq_test/processed/brain/CellRanger/brain/outs/fragments.tsv.gz
+        /hpcwork/rwth1209/data/dbitseq_test/processed/kidney/CellRanger/kidney/outs/fragments.tsv.gz

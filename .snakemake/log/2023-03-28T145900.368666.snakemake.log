@@ -1,0 +1,27 @@
+Building DAG of jobs...
+Using shell: /usr/local_rwth/bin/bash
+Provided cluster nodes: 20
+Job stats:
+job              count    min threads    max threads
+-------------  -------  -------------  -------------
+R1_rename            1              1              1
+all                  1              1              1
+bc_process           1              1              1
+cell_ranger          1              1              1
+filter_L1            1              1              1
+filter_L2            1              1              1
+filter_primer        1              1              1
+total                7              1              1
+
+Select jobs to execute...
+
+[Tue Mar 28 14:59:10 2023]
+rule filter_primer:
+    input: /rwthfs/rz/cluster/hpcwork/rwth1209/data/dbitseq_test/raw/mouse_brain/MouseBrain_S1_R1_001.fastq.gz, /rwthfs/rz/cluster/hpcwork/rwth1209/data/dbitseq_test/raw/mouse_brain/MouseBrain_S1_R2_001.fastq.gz
+    output: /rwthfs/rz/cluster/hpcwork/rwth1209/data/dbitseq_test/processed/mouse_brain/CellRanger/tmp_data/qc_raw_data/mouse_brain_raw_qc_primer_R1.fastq.gz, /rwthfs/rz/cluster/hpcwork/rwth1209/data/dbitseq_test/processed/mouse_brain/CellRanger/tmp_data/qc_raw_data/mouse_brain_raw_qc_primer_R2.fastq.gz
+    jobid: 5
+    reason: Missing output files: /rwthfs/rz/cluster/hpcwork/rwth1209/data/dbitseq_test/processed/mouse_brain/CellRanger/tmp_data/qc_raw_data/mouse_brain_raw_qc_primer_R1.fastq.gz, /rwthfs/rz/cluster/hpcwork/rwth1209/data/dbitseq_test/processed/mouse_brain/CellRanger/tmp_data/qc_raw_data/mouse_brain_raw_qc_primer_R2.fastq.gz
+    wildcards: sample=mouse_brain
+    resources: mem_mb=82211, mem_mib=78403, disk_mb=82211, disk_mib=78403, tmpdir=<TBD>
+
+Submitted job 5 with external jobid 'Submitted batch job 34207927'.

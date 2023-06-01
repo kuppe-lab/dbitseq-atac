@@ -1,0 +1,3 @@
+IndexError in file /rwthfs/rz/cluster/work/rwth1209/software/DbiT-seq-pipeline/Data_preprocessing/Snakefile, line 34:
+list index out of range
+  File "/rwthfs/rz/cluster/work/rwth1209/software/DbiT-seq-pipeline/Data_preprocessing/Snakefile", line 34, in <module>

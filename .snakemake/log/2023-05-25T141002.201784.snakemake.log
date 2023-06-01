@@ -1,0 +1,68 @@
+Building DAG of jobs...
+Using shell: /usr/local_rwth/bin/bash
+Provided cluster nodes: 20
+Job stats:
+job              count    min threads    max threads
+-------------  -------  -------------  -------------
+R1_rename            2              1              1
+all                  1              1              1
+bc_process           2              1              1
+cell_ranger          2              1              1
+filter_L1            2              1              1
+filter_L2            2              1              1
+filter_primer        2              1              1
+total               13              1              1
+
+Select jobs to execute...
+
+[Thu May 25 14:10:44 2023]
+rule filter_primer:
+    input: /rwthfs/rz/cluster/hpcwork/rwth1209/data/dbitseq/atac/mouse/230522/raw/mouse_Library1/Library1_S1_R1_001.fastq.gz, /rwthfs/rz/cluster/hpcwork/rwth1209/data/dbitseq/atac/mouse/230522/raw/mouse_Library1/Library1_S1_R2_001.fastq.gz
+    output: /rwthfs/rz/cluster/hpcwork/rwth1209/data/dbitseq/atac/mouse/230522/data_processing/mouse_Library1/CellRanger/tmp_data/qc_raw_data/mouse_Library1_raw_qc_primer_R1.fastq.gz, /rwthfs/rz/cluster/hpcwork/rwth1209/data/dbitseq/atac/mouse/230522/data_processing/mouse_Library1/CellRanger/tmp_data/qc_raw_data/mouse_Library1_raw_qc_primer_R2.fastq.gz
+    jobid: 5
+    reason: Missing output files: /rwthfs/rz/cluster/hpcwork/rwth1209/data/dbitseq/atac/mouse/230522/data_processing/mouse_Library1/CellRanger/tmp_data/qc_raw_data/mouse_Library1_raw_qc_primer_R1.fastq.gz, /rwthfs/rz/cluster/hpcwork/rwth1209/data/dbitseq/atac/mouse/230522/data_processing/mouse_Library1/CellRanger/tmp_data/qc_raw_data/mouse_Library1_raw_qc_primer_R2.fastq.gz
+    wildcards: sample=mouse_Library1
+    resources: mem_mb=145565, mem_mib=138822, disk_mb=145565, disk_mib=138822, tmpdir=<TBD>
+
+Submitted job 5 with external jobid 'Submitted batch job 35172676'.
+
+[Thu May 25 14:10:45 2023]
+rule filter_primer:
+    input: /rwthfs/rz/cluster/hpcwork/rwth1209/data/dbitseq/atac/mouse/230522/raw/mouse_Library2/Library2_S2_R1_001.fastq.gz, /rwthfs/rz/cluster/hpcwork/rwth1209/data/dbitseq/atac/mouse/230522/raw/mouse_Library2/Library2_S2_R2_001.fastq.gz
+    output: /rwthfs/rz/cluster/hpcwork/rwth1209/data/dbitseq/atac/mouse/230522/data_processing/mouse_Library2/CellRanger/tmp_data/qc_raw_data/mouse_Library2_raw_qc_primer_R1.fastq.gz, /rwthfs/rz/cluster/hpcwork/rwth1209/data/dbitseq/atac/mouse/230522/data_processing/mouse_Library2/CellRanger/tmp_data/qc_raw_data/mouse_Library2_raw_qc_primer_R2.fastq.gz
+    jobid: 11
+    reason: Missing output files: /rwthfs/rz/cluster/hpcwork/rwth1209/data/dbitseq/atac/mouse/230522/data_processing/mouse_Library2/CellRanger/tmp_data/qc_raw_data/mouse_Library2_raw_qc_primer_R1.fastq.gz, /rwthfs/rz/cluster/hpcwork/rwth1209/data/dbitseq/atac/mouse/230522/data_processing/mouse_Library2/CellRanger/tmp_data/qc_raw_data/mouse_Library2_raw_qc_primer_R2.fastq.gz
+    wildcards: sample=mouse_Library2
+    resources: mem_mb=66755, mem_mib=63663, disk_mb=66755, disk_mib=63663, tmpdir=<TBD>
+
+Submitted job 11 with external jobid 'Submitted batch job 35172677'.
+[Thu May 25 14:19:24 2023]
+Finished job 11.
+1 of 13 steps (8%) done
+Select jobs to execute...
+
+[Thu May 25 14:19:24 2023]
+rule filter_L1:
+    input: /rwthfs/rz/cluster/hpcwork/rwth1209/data/dbitseq/atac/mouse/230522/data_processing/mouse_Library2/CellRanger/tmp_data/qc_raw_data/mouse_Library2_raw_qc_primer_R1.fastq.gz, /rwthfs/rz/cluster/hpcwork/rwth1209/data/dbitseq/atac/mouse/230522/data_processing/mouse_Library2/CellRanger/tmp_data/qc_raw_data/mouse_Library2_raw_qc_primer_R2.fastq.gz
+    output: /rwthfs/rz/cluster/hpcwork/rwth1209/data/dbitseq/atac/mouse/230522/data_processing/mouse_Library2/CellRanger/tmp_data/qc_raw_data/mouse_Library2_raw_qc_linker1_R1.fastq.gz, /rwthfs/rz/cluster/hpcwork/rwth1209/data/dbitseq/atac/mouse/230522/data_processing/mouse_Library2/CellRanger/tmp_data/qc_raw_data/mouse_Library2_raw_qc_linker1_R2.fastq.gz
+    jobid: 10
+    reason: Missing output files: /rwthfs/rz/cluster/hpcwork/rwth1209/data/dbitseq/atac/mouse/230522/data_processing/mouse_Library2/CellRanger/tmp_data/qc_raw_data/mouse_Library2_raw_qc_linker1_R2.fastq.gz, /rwthfs/rz/cluster/hpcwork/rwth1209/data/dbitseq/atac/mouse/230522/data_processing/mouse_Library2/CellRanger/tmp_data/qc_raw_data/mouse_Library2_raw_qc_linker1_R1.fastq.gz; Input files updated by another job: /rwthfs/rz/cluster/hpcwork/rwth1209/data/dbitseq/atac/mouse/230522/data_processing/mouse_Library2/CellRanger/tmp_data/qc_raw_data/mouse_Library2_raw_qc_primer_R1.fastq.gz, /rwthfs/rz/cluster/hpcwork/rwth1209/data/dbitseq/atac/mouse/230522/data_processing/mouse_Library2/CellRanger/tmp_data/qc_raw_data/mouse_Library2_raw_qc_primer_R2.fastq.gz
+    wildcards: sample=mouse_Library2
+    resources: mem_mb=27708, mem_mib=26425, disk_mb=27708, disk_mib=26425, tmpdir=<TBD>
+
+Submitted job 10 with external jobid 'Submitted batch job 35173046'.
+[Thu May 25 14:33:04 2023]
+Finished job 5.
+2 of 13 steps (15%) done
+Select jobs to execute...
+
+[Thu May 25 14:33:04 2023]
+rule filter_L1:
+    input: /rwthfs/rz/cluster/hpcwork/rwth1209/data/dbitseq/atac/mouse/230522/data_processing/mouse_Library1/CellRanger/tmp_data/qc_raw_data/mouse_Library1_raw_qc_primer_R1.fastq.gz, /rwthfs/rz/cluster/hpcwork/rwth1209/data/dbitseq/atac/mouse/230522/data_processing/mouse_Library1/CellRanger/tmp_data/qc_raw_data/mouse_Library1_raw_qc_primer_R2.fastq.gz
+    output: /rwthfs/rz/cluster/hpcwork/rwth1209/data/dbitseq/atac/mouse/230522/data_processing/mouse_Library1/CellRanger/tmp_data/qc_raw_data/mouse_Library1_raw_qc_linker1_R1.fastq.gz, /rwthfs/rz/cluster/hpcwork/rwth1209/data/dbitseq/atac/mouse/230522/data_processing/mouse_Library1/CellRanger/tmp_data/qc_raw_data/mouse_Library1_raw_qc_linker1_R2.fastq.gz
+    jobid: 4
+    reason: Missing output files: /rwthfs/rz/cluster/hpcwork/rwth1209/data/dbitseq/atac/mouse/230522/data_processing/mouse_Library1/CellRanger/tmp_data/qc_raw_data/mouse_Library1_raw_qc_linker1_R2.fastq.gz, /rwthfs/rz/cluster/hpcwork/rwth1209/data/dbitseq/atac/mouse/230522/data_processing/mouse_Library1/CellRanger/tmp_data/qc_raw_data/mouse_Library1_raw_qc_linker1_R1.fastq.gz; Input files updated by another job: /rwthfs/rz/cluster/hpcwork/rwth1209/data/dbitseq/atac/mouse/230522/data_processing/mouse_Library1/CellRanger/tmp_data/qc_raw_data/mouse_Library1_raw_qc_primer_R1.fastq.gz, /rwthfs/rz/cluster/hpcwork/rwth1209/data/dbitseq/atac/mouse/230522/data_processing/mouse_Library1/CellRanger/tmp_data/qc_raw_data/mouse_Library1_raw_qc_primer_R2.fastq.gz
+    wildcards: sample=mouse_Library1
+    resources: mem_mb=89486, mem_mib=85341, disk_mb=89486, disk_mib=85341, tmpdir=<TBD>
+
+Submitted job 4 with external jobid 'Submitted batch job 35173325'.

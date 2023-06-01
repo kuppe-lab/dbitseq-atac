@@ -1,0 +1,104 @@
+Building DAG of jobs...
+Using shell: /usr/local_rwth/bin/bash
+Provided cluster nodes: 20
+Job stats:
+job            count    min threads    max threads
+-----------  -------  -------------  -------------
+R2_rename          1              1              1
+all                1              1              1
+bc_process         1              1              1
+cell_ranger        1              1              1
+filter_L1          1              1              1
+filter_L2          1              1              1
+total              6              1              1
+
+Select jobs to execute...
+
+[Fri Mar 24 18:25:25 2023]
+rule filter_L1:
+    input: /rwthfs/rz/cluster/hpcwork/rwth1209/data/dbitseq_test/raw/kidney/HumanKidney_S2_R1_001.fastq.gz, /rwthfs/rz/cluster/hpcwork/rwth1209/data/dbitseq_test/raw/kidney/HumanKidney_S2_R2_001.fastq.gz
+    output: /rwthfs/rz/cluster/hpcwork/rwth1209/data/dbitseq_test/processed/kidney/CellRanger/tmp_data/qc_raw_data/kidney_raw_qc_linker1_R1.fastq.gz, /rwthfs/rz/cluster/hpcwork/rwth1209/data/dbitseq_test/processed/kidney/CellRanger/tmp_data/qc_raw_data/kidney_raw_qc_linker1_R2.fastq.gz
+    jobid: 4
+    reason: Missing output files: /rwthfs/rz/cluster/hpcwork/rwth1209/data/dbitseq_test/processed/kidney/CellRanger/tmp_data/qc_raw_data/kidney_raw_qc_linker1_R2.fastq.gz, /rwthfs/rz/cluster/hpcwork/rwth1209/data/dbitseq_test/processed/kidney/CellRanger/tmp_data/qc_raw_data/kidney_raw_qc_linker1_R1.fastq.gz
+    wildcards: sample=kidney
+    resources: mem_mb=134959, mem_mib=128707, disk_mb=134959, disk_mib=128707, tmpdir=<TBD>
+
+Submitted job 4 with external jobid 'Submitted batch job 34187281'.
+[Fri Mar 24 18:55:28 2023]
+Finished job 4.
+1 of 6 steps (17%) done
+Select jobs to execute...
+
+[Fri Mar 24 18:55:28 2023]
+rule filter_L2:
+    input: /rwthfs/rz/cluster/hpcwork/rwth1209/data/dbitseq_test/processed/kidney/CellRanger/tmp_data/qc_raw_data/kidney_raw_qc_linker1_R1.fastq.gz, /rwthfs/rz/cluster/hpcwork/rwth1209/data/dbitseq_test/processed/kidney/CellRanger/tmp_data/qc_raw_data/kidney_raw_qc_linker1_R2.fastq.gz
+    output: /rwthfs/rz/cluster/hpcwork/rwth1209/data/dbitseq_test/processed/kidney/CellRanger/tmp_data/qc_raw_data/kidney_raw_qc_R1.fastq.gz, /rwthfs/rz/cluster/hpcwork/rwth1209/data/dbitseq_test/processed/kidney/CellRanger/tmp_data/qc_raw_data/kidney_raw_qc_R2.fastq.gz
+    jobid: 3
+    reason: Missing output files: /rwthfs/rz/cluster/hpcwork/rwth1209/data/dbitseq_test/processed/kidney/CellRanger/tmp_data/qc_raw_data/kidney_raw_qc_R2.fastq.gz, /rwthfs/rz/cluster/hpcwork/rwth1209/data/dbitseq_test/processed/kidney/CellRanger/tmp_data/qc_raw_data/kidney_raw_qc_R1.fastq.gz; Input files updated by another job: /rwthfs/rz/cluster/hpcwork/rwth1209/data/dbitseq_test/processed/kidney/CellRanger/tmp_data/qc_raw_data/kidney_raw_qc_linker1_R2.fastq.gz, /rwthfs/rz/cluster/hpcwork/rwth1209/data/dbitseq_test/processed/kidney/CellRanger/tmp_data/qc_raw_data/kidney_raw_qc_linker1_R1.fastq.gz
+    wildcards: sample=kidney
+    resources: mem_mb=83003, mem_mib=79158, disk_mb=83003, disk_mib=79158, tmpdir=<TBD>
+
+Submitted job 3 with external jobid 'Submitted batch job 34187409'.
+[Fri Mar 24 19:18:30 2023]
+Finished job 3.
+2 of 6 steps (33%) done
+Select jobs to execute...
+
+[Fri Mar 24 19:18:31 2023]
+rule bc_process:
+    input: /rwthfs/rz/cluster/hpcwork/rwth1209/data/dbitseq_test/processed/kidney/CellRanger/tmp_data/qc_raw_data/kidney_raw_qc_R1.fastq.gz
+    output: /rwthfs/rz/cluster/hpcwork/rwth1209/data/dbitseq_test/processed/kidney/CellRanger/tmp_data/kidney_S1_L001_R1_001.fastq, /rwthfs/rz/cluster/hpcwork/rwth1209/data/dbitseq_test/processed/kidney/CellRanger/tmp_data/kidney_S1_L001_R2_001.fastq
+    jobid: 2
+    reason: Missing output files: /rwthfs/rz/cluster/hpcwork/rwth1209/data/dbitseq_test/processed/kidney/CellRanger/tmp_data/kidney_S1_L001_R2_001.fastq, /rwthfs/rz/cluster/hpcwork/rwth1209/data/dbitseq_test/processed/kidney/CellRanger/tmp_data/kidney_S1_L001_R1_001.fastq; Input files updated by another job: /rwthfs/rz/cluster/hpcwork/rwth1209/data/dbitseq_test/processed/kidney/CellRanger/tmp_data/qc_raw_data/kidney_raw_qc_R1.fastq.gz
+    wildcards: sample=kidney
+    resources: mem_mb=37291, mem_mib=35564, disk_mb=37291, disk_mib=35564, tmpdir=<TBD>
+
+Submitted job 2 with external jobid 'Submitted batch job 34187524'.
+
+[Fri Mar 24 19:18:31 2023]
+rule R2_rename:
+    input: /rwthfs/rz/cluster/hpcwork/rwth1209/data/dbitseq_test/processed/kidney/CellRanger/tmp_data/qc_raw_data/kidney_raw_qc_R2.fastq.gz
+    output: /rwthfs/rz/cluster/hpcwork/rwth1209/data/dbitseq_test/processed/kidney/CellRanger/tmp_data/kidney_S1_L001_R3_001.fastq.gz
+    jobid: 5
+    reason: Missing output files: /rwthfs/rz/cluster/hpcwork/rwth1209/data/dbitseq_test/processed/kidney/CellRanger/tmp_data/kidney_S1_L001_R3_001.fastq.gz; Input files updated by another job: /rwthfs/rz/cluster/hpcwork/rwth1209/data/dbitseq_test/processed/kidney/CellRanger/tmp_data/qc_raw_data/kidney_raw_qc_R2.fastq.gz
+    wildcards: sample=kidney
+    resources: mem_mb=36546, mem_mib=34853, disk_mb=36546, disk_mib=34853, tmpdir=<TBD>
+
+Submitted job 5 with external jobid 'Submitted batch job 34187525'.
+[Fri Mar 24 19:20:30 2023]
+Finished job 5.
+3 of 6 steps (50%) done
+[Fri Mar 24 19:42:02 2023]
+Finished job 2.
+4 of 6 steps (67%) done
+Select jobs to execute...
+
+[Fri Mar 24 19:42:02 2023]
+rule cell_ranger:
+    input: /rwthfs/rz/cluster/hpcwork/rwth1209/data/dbitseq_test/processed/kidney/CellRanger/tmp_data/kidney_S1_L001_R1_001.fastq, /rwthfs/rz/cluster/hpcwork/rwth1209/data/dbitseq_test/processed/kidney/CellRanger/tmp_data/kidney_S1_L001_R2_001.fastq, /rwthfs/rz/cluster/hpcwork/rwth1209/data/dbitseq_test/processed/kidney/CellRanger/tmp_data/kidney_S1_L001_R3_001.fastq.gz
+    output: /rwthfs/rz/cluster/hpcwork/rwth1209/data/dbitseq_test/processed/kidney/CellRanger/kidney/outs/fragments.tsv.gz
+    jobid: 1
+    reason: Missing output files: /rwthfs/rz/cluster/hpcwork/rwth1209/data/dbitseq_test/processed/kidney/CellRanger/kidney/outs/fragments.tsv.gz; Input files updated by another job: /rwthfs/rz/cluster/hpcwork/rwth1209/data/dbitseq_test/processed/kidney/CellRanger/tmp_data/kidney_S1_L001_R2_001.fastq, /rwthfs/rz/cluster/hpcwork/rwth1209/data/dbitseq_test/processed/kidney/CellRanger/tmp_data/kidney_S1_L001_R3_001.fastq.gz, /rwthfs/rz/cluster/hpcwork/rwth1209/data/dbitseq_test/processed/kidney/CellRanger/tmp_data/kidney_S1_L001_R1_001.fastq
+    wildcards: sample=kidney
+    resources: mem_mb=160593, mem_mib=153154, disk_mb=160593, disk_mib=153154, tmpdir=<TBD>
+
+Submitted job 1 with external jobid 'Submitted batch job 34187584'.
+[Fri Mar 24 19:51:03 2023]
+Error in rule cell_ranger:
+    jobid: 1
+    input: /rwthfs/rz/cluster/hpcwork/rwth1209/data/dbitseq_test/processed/kidney/CellRanger/tmp_data/kidney_S1_L001_R1_001.fastq, /rwthfs/rz/cluster/hpcwork/rwth1209/data/dbitseq_test/processed/kidney/CellRanger/tmp_data/kidney_S1_L001_R2_001.fastq, /rwthfs/rz/cluster/hpcwork/rwth1209/data/dbitseq_test/processed/kidney/CellRanger/tmp_data/kidney_S1_L001_R3_001.fastq.gz
+    output: /rwthfs/rz/cluster/hpcwork/rwth1209/data/dbitseq_test/processed/kidney/CellRanger/kidney/outs/fragments.tsv.gz
+    shell:
+        
+    cd /rwthfs/rz/cluster/hpcwork/rwth1209/data/dbitseq_test/processed/kidney/CellRanger/
+    rm -r kidney
+    
+    /rwthfs/rz/cluster/work/rwth1209/software//cellranger-atac-2.1.0-dbitseq/ count     --id=kidney     --reference=/rwthfs/rz/cluster/hpcwork/rwth1209/reference_genome/human_GRCh38_10x/     --fastqs=/rwthfs/rz/cluster/hpcwork/rwth1209/data/dbitseq_test/processed/kidney/CellRanger/tmp_data     --sample=kidney     --localcores=16     --localmem=64
+    
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 34187584
+
+Error executing rule cell_ranger on cluster (jobid: 1, external: Submitted batch job 34187584, jobscript: /rwthfs/rz/cluster/work/rwth1209/software/DbiT-seq-pipeline/Data_preprocessing/.snakemake/tmp.7zas5ert/snakejob.cell_ranger.1.sh). For error details see the cluster log and the log files of the involved rule(s).
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2023-03-24T182523.947270.snakemake.log
